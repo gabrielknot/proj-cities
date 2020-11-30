@@ -11,16 +11,16 @@ public class CitiesProcessorDemo
     public static void main( String[] args )
     {
 	CitiesProcessor cp = new CitiesProcessor();
-	Set<City> set = cp.buildSetOfCities( Path.of("files/cidades_duplicadas.txt"));
+	Set<City> set = cp.buildSetOfCities("files/cidades_duplicadas.txt");
 
 	cp.setCitiesSet(set);
 
-	cp.writeSetOfCities(Path.of("file/cities_orded_by_name.txt"), Comparator.naturalOrder());
+	cp.writeSetOfCities(Paths.get("file/cities_orded_by_name.txt"), Comparator.naturalOrder());
 
 	ComparatorByZipCode comparatorByZipCode = new ComparatorByZipCode();
 	ComparatorByState comparatorByState = new ComparatorByState();
 	
-	cp.writeSetOfCities(Path.of("file/cities_orded_by_ZipCodeipCode.txt"), comparatorByZipCodeipCode);
-	cp.writeSetOfCities(Path.of("file/cities_orded_by_State.txt"), comparatorByState);
+	cp.writeSetOfCities(Paths.get("file/cities_orded_by_ZipCodeipCode.txt"), comparatorByZipCode);
+	cp.writeSetOfCities(Paths.get("file/cities_orded_by_State.txt"), comparatorByState);
     }
 }
