@@ -1,5 +1,4 @@
 package IFPB.POO;
-import java.util.Collections;
 import java.util.Comparator;
 public class ComparatorByZipCode implements Comparator<City>{
 	
