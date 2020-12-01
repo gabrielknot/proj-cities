@@ -1,10 +1,7 @@
 package IFPB.POO;
 
-import java.util.Collections;
 import java.util.Set;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Comparator;
 
 public class CitiesProcessorDemo 
 {
@@ -15,11 +12,12 @@ public class CitiesProcessorDemo
 
 	cp.setCitiesSet(set);
 
-	cp.writeSetOfCities(Paths.get("file/cities_orded_by_name.txt"), Comparator.naturalOrder());
 
 	ComparatorByZipCode comparatorByZipCode = new ComparatorByZipCode();
 	ComparatorByState comparatorByState = new ComparatorByState();
-	
+	NaturalOrderComparator naturalOrderComparator = new NaturalOrderComparator();
+	cp.writeSetOfCities(Paths.get("file/cities_orded_by_name.txt"), naturalOrderComparator);
+
 	cp.writeSetOfCities(Paths.get("file/cities_orded_by_ZipCodeipCode.txt"), comparatorByZipCode);
 	cp.writeSetOfCities(Paths.get("file/cities_orded_by_State.txt"), comparatorByState);
     }
